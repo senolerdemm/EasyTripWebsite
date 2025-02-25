@@ -1,0 +1,33 @@
+@using EasyTripProject
+@using EasyTripProject.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, EasyTripProject
+@model List<About>
+@{
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+    ViewData["Title"] = "About";
+}
+
+
+
+<div class="content">
+	<div class="wrap">
+	 <div class="about">
+		<h3>About</h3>
+		<img src="~/web/images/about_banner.jpg" alt=""/>
+        @foreach (var item in Model)
+        {
+            <div class="about-top">
+                <div class="grid1">
+                    <h4>@item.Id</h4>
+                    <img src="@item.ImageURL">
+                    <p>@item.Description</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+        }
+
+	</div>
+	</div>
+	</div>
