@@ -389,6 +389,86 @@
       "PackagePath": "staticwebassets/web/w3layouts-License.txt"
     },
     {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/about.html",
+      "PackagePath": "staticwebassets/web2/about.html"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/contact.html",
+      "PackagePath": "staticwebassets/web2/contact.html"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/css/bootstrap.css",
+      "PackagePath": "staticwebassets/web2/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/css/style.css",
+      "PackagePath": "staticwebassets/web2/css/style.css"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/avatar.png",
+      "PackagePath": "staticwebassets/web2/images/avatar.png"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/icon3.png",
+      "PackagePath": "staticwebassets/web2/images/icon3.png"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/indir.jpeg",
+      "PackagePath": "staticwebassets/web2/images/indir.jpeg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/logo.jpg",
+      "PackagePath": "staticwebassets/web2/images/logo.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/man.jpg",
+      "PackagePath": "staticwebassets/web2/images/man.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/more.png",
+      "PackagePath": "staticwebassets/web2/images/more.png"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/post1.jpg",
+      "PackagePath": "staticwebassets/web2/images/post1.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/post2.jpg",
+      "PackagePath": "staticwebassets/web2/images/post2.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/post3.jpg",
+      "PackagePath": "staticwebassets/web2/images/post3.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/images/search.png",
+      "PackagePath": "staticwebassets/web2/images/search.png"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/index.html",
+      "PackagePath": "staticwebassets/web2/index.html"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/js/easing.js",
+      "PackagePath": "staticwebassets/web2/js/easing.js"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/js/jquery.min.js",
+      "PackagePath": "staticwebassets/web2/js/jquery.min.js"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/js/move-top.js",
+      "PackagePath": "staticwebassets/web2/js/move-top.js"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/single.html",
+      "PackagePath": "staticwebassets/web2/single.html"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/w3layouts-License.txt",
+      "PackagePath": "staticwebassets/web2/w3layouts-License.txt"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.EasyTripProject.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

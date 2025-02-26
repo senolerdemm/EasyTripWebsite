@@ -7,6 +7,11 @@ namespace EasyTripProject.Models
 {
     public class FreeTravelGuides
     {   
+        public FreeTravelGuides()
+        {
+            Comments = new HashSet<Comments>();
+        }
+
         [Key]
         public int Id { get; set; }
         public string? Header { get; set; }
@@ -14,6 +19,7 @@ namespace EasyTripProject.Models
         public DateTime? Date { get; set; }
         public string? ImageURL { get; set; }
        
-        public ICollection<Comments>? Commentss { get; set; }
+        // Changed to non-nullable collection
+        public virtual ICollection<Comments> Comments { get; set; }
     }
 }

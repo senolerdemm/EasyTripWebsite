@@ -1,30 +1,21 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-@{ Layout = null; }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Free Easy-Trip Website Template | Home :: w3layouts</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EasyTripProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EasyTripProject.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
     <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
     <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
-
     <script src="~/js/responsiveslides.min.js"></script>
-
     <script>
-      // You can also use "$(window).load(function() {"
       $(function () {
-        // Slideshow 1
         $("#slider1").responsiveSlides({
           auto: true,
           nav: true,
@@ -35,6 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
   </head>
   <body>
+   
     <div class="header">
       <div class="wrap">
         <div class="logo">
@@ -55,10 +47,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="header-bottom">
       <div class="wrap">
         <ul id="nav">
-            <li><a href="/Home/">Home</a></li>
-            <li><a class="hsubs" href="/About/">About</a></li>
+          <li><a  asp-controller="Home" asp-action="Index">Home</a></li>
+          <li><a class="hsubs" href="/About/">About</a></li>
           <li>
-            <a class="hsubs" href="destinations.html">Destinations</a>
+            <a class="hsubs" href="/FreeTravelGuide" >Destinations</a>
             <ul class="subs">
               <li><a href="#">Hotels</a></li>
               <li><a href="#">Restaurants</a></li>
@@ -66,13 +58,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </ul>
           </li>
           <li>
-            <a class="hsubs" href="destinations.html">Free Travel Guides</a>
+            <a class="hsubs"  asp-controller="FreeTravelGuide" asp-action="Index">Free Travel Guides</a>
           </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
-  <div class="content clearfix">@RenderBody()</div>
+    <div class="content clearfix">
+      @RenderBody()
+    </div>
+
+    @* Render "Scripts" section eğer sayfada tanımlıysa *@
+    @RenderSection("Scripts", required: false)
 
     <div class="footer-bottom">
       <div class="wrap">

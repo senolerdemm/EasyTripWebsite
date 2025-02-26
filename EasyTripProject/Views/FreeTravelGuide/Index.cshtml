@@ -1,0 +1,126 @@
+@* filepath: /Users/senolerdem/EasyTrip/EasyTripProject/Views/FreeTravelGuide/Index.cshtml *@
+@model List<EasyTripProject.Models.FreeTravelGuides>
+@{
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@section Styles {
+    <link href="~/web2/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+}
+
+@section Scripts {
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/web2/js/move-top.js"></script>
+    <script type="text/javascript" src="~/web2/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+}
+
+<!---header---->
+<div class="header">
+    <div class="container">
+       
+        <!---start-top-nav---->
+        
+        <div class="clearfix"></div>
+        <script>
+            $("span.menu").click(function () {
+                $(".top-menu ul").slideToggle("slow", function () {
+                });
+            });
+        </script>
+        <!---//End-top-nav---->
+    </div>
+</div>
+<!--/header-->
+<div class="container">
+    <div class="row">
+        <!-- Main Content Column -->
+        <div class="col-md-8">
+            @foreach (var item in Model)
+            {
+                <div class="blog-post">
+                    <h2>@item.Header</h2>
+                    <!-- Show only first 200 characters of description -->
+                    <p>@(item.Description?.Length > 200 ? item.Description.Substring(0, 200) + "..." : item.Description)</p>
+                    <!-- Show smaller image for index -->
+                    <img src="@item.ImageURL" alt="@item.Header" class="img-fluid thumbnail" style="max-height: 250px; object-fit: cover;" />
+                    <div class="post-meta">
+                        <span class="date">@item.Date?.ToString("MMM dd, yyyy")</span>
+                    </div>
+                    <a asp-controller="FreeTravelGuide" 
+                       asp-action="Details" 
+                       asp-route-id="@item.Id" 
+                       class="read-more btn btn-primary">Read More</a>
+                </div>
+                <hr />
+            }
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-4 side-content">
+            <!-- Recent Posts -->
+            <div class="recent bg-white p-4 rounded shadow-sm mb-4">
+                <h3>RECENT POSTS</h3>
+                <ul class="list-unstyled">
+                    @foreach (var post in ViewBag.RecentPosts)
+                    {
+                        <li class="mb-3">
+                            <a asp-action="Details" 
+                               asp-controller="FreeTravelGuide" 
+                               asp-route-id="@post.Id"
+                               class="text-decoration-none">
+                                <h6 class="mb-1">@post.Header</h6>
+                                <small class="text-muted">@post.Date?.ToString("MMM dd, yyyy")</small>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Recent Comments -->
+            <div class="comments bg-white p-4 rounded shadow-sm">
+                <h3>RECENT COMMENTS</h3>
+                @if (ViewBag.RecentComments != null && ViewBag.RecentComments.Count > 0)
+                {
+                    <ul class="list-unstyled">
+                        @foreach (var comment in ViewBag.RecentComments)
+                        {
+                            <li class="mb-3">
+                                <strong>@comment.Username</strong> on
+                                <a asp-action="Details" 
+                                   asp-controller="FreeTravelGuide" 
+                                   asp-route-id="@comment.FreeTravelGuidesId"
+                                   class="text-decoration-none">
+                                    @comment.FreeTravelGuides?.Header
+                                </a>
+                                <small class="d-block text-muted">@comment.Date</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No comments yet.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+<div class="footer">
+    <div class="container">
+        <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+    </div>
+</div>
+
+

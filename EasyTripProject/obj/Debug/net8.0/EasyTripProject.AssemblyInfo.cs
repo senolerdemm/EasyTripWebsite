@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasyTripProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0714f96994e62e9d375f1809e666082d2845ace")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasyTripProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasyTripProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

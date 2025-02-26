@@ -11,14 +11,26 @@ namespace EasyTripProject.Models
     {   
         [Key]
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(100)]
         public string? Username { get; set; }
+
+        [Required]
+        [StringLength(500)]
         public string? Comment { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [StringLength(100)]
         public string? Mail { get; set; }
-        public string? Date { get; set; }
+
+        public string? Date { get; set; } 
        
-        public int? FreeTravelGuidesId { get; set; }
+        [Required]
+        public int FreeTravelGuidesId { get; set; }
+
         [ForeignKey("FreeTravelGuidesId")]
-        public FreeTravelGuides? FreeTravelGuides { get; set; }
-        
+        public virtual FreeTravelGuides? FreeTravelGuides { get; set; }
     }
 }

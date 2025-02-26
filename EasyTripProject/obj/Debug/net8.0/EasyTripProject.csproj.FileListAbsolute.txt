@@ -1,3 +1,12 @@
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.csproj.AssemblyReference.cache
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.AssemblyInfoInputs.cache
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.AssemblyInfo.cs
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.csproj.CoreCompileInputs.cache
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.MvcApplicationPartsAssemblyInfo.cache
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.RazorAssemblyInfo.cache
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.RazorAssemblyInfo.cs
+/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.sourcelink.json
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/appsettings.Development.json
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/appsettings.json
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/EasyTripProject.staticwebassets.runtime.json
@@ -108,14 +117,6 @@
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/senolerdem/EasyTrip/EasyTripProject/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.csproj.AssemblyReference.cache
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.GeneratedMSBuildEditorConfig.editorconfig
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.AssemblyInfoInputs.cache
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.AssemblyInfo.cs
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.csproj.CoreCompileInputs.cache
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.MvcApplicationPartsAssemblyInfo.cache
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.RazorAssemblyInfo.cache
-/Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/EasyTripProject.RazorAssemblyInfo.cs
 /Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/staticwebassets.build.json
 /Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/staticwebassets.development.json
 /Users/senolerdem/EasyTrip/EasyTripProject/obj/Debug/net8.0/staticwebassets/msbuild.EasyTripProject.Microsoft.AspNetCore.StaticWebAssets.props

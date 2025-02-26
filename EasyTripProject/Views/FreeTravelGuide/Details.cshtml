@@ -1,0 +1,156 @@
+@* filepath: /Users/senolerdem/EasyTrip/EasyTripProject/Views/FreeTravelGuide/Index.cshtml *@
+@model EasyTripProject.Models.FreeTravelGuides
+@{
+    ViewData["Title"] = Model.Header;
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@section Styles {
+    <link href="~/web2/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/web2/css/style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+}
+
+@section Scripts {
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/web2/js/move-top.js"></script>
+    <script type="text/javascript" src="~/web2/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+}
+
+<!---header---->
+<div class="header">
+    <div class="container">
+       
+        <!---start-top-nav---->
+        
+        <div class="clearfix"></div>
+        <script>
+            $("span.menu").click(function () {
+                $(".top-menu ul").slideToggle("slow", function () {
+                });
+            });
+        </script>
+        <!---//End-top-nav---->
+    </div>
+</div>
+<!--/header-->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Main Content Column -->
+        <div class="col-md-8">
+            <article class="blog-post-detail bg-white p-4 rounded shadow-sm">
+                <h1 class="post-title mb-3">@Model.Header</h1>
+                <div class="post-meta text-muted mb-4">
+                    <span class="date">Published on @Model.Date?.ToString("MMMM dd, yyyy")</span>
+                </div>
+                
+                <div class="post-image mb-4">
+                    <img src="@Model.ImageURL" alt="@Model.Header" class="img-fluid rounded" />
+                </div>
+
+                <div class="post-content">
+                    @Html.Raw(Model.Description?.Replace("\n", "<br />"))
+                </div>
+            </article>
+
+            <!-- Comments Section -->
+            <div class="comments-section mt-5 bg-white p-4 rounded shadow-sm">
+                <h3>Comments (@Model.Comments?.Count())</h3>
+                @if (Model.Comments != null && Model.Comments.Any())
+                {
+                    foreach (var comment in Model.Comments.OrderByDescending(c => c.Date))
+                    {
+                        <div class="comment-item border-bottom py-3">
+                            <div class="comment-header d-flex justify-content-between align-items-center">
+                                <strong>@comment.Username</strong>
+                                <span class="text-muted small">@comment.Date</span>
+                            </div>
+                            <div class="comment-content mt-2">
+                                @comment.Comment
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                }
+
+                <!-- Comment Form -->
+                <div class="comment-form mt-4">
+                    <h4 class="mb-3">Leave a Comment</h4>
+                    <form method="post" asp-controller="FreeTravelGuide" asp-action="AddComment">
+                        <input type="hidden" name="FreeTravelGuidesId" value="@Model.Id" />
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" name="Username" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control" name="Mail" placeholder="Your Email" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" name="Comment" rows="4" placeholder="Your Comment" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-md-4">
+            <!-- Recent Posts -->
+            <div class="sidebar-section bg-white p-4 rounded shadow-sm mb-4">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul class="list-unstyled">
+                    @foreach (var post in ViewBag.RecentPosts)
+                    {
+                        <li class="mb-3">
+                            <a asp-action="Details" 
+                               asp-controller="FreeTravelGuide" 
+                               asp-route-id="@post.Id"
+                               class="text-decoration-none">
+                                <h6 class="mb-1">@post.Header</h6>
+                                <small class="text-muted">@post.Date?.ToString("MMM dd, yyyy")</small>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Recent Comments -->
+            <div class="sidebar-section bg-white p-4 rounded shadow-sm">
+                <h3 class="sidebar-title">Recent Comments</h3>
+                @if (Model.Comments != null && Model.Comments.Any())
+                {
+                    <ul class="list-unstyled">
+                        @foreach (var comment in Model.Comments.OrderByDescending(c => c.Date).Take(5))
+                        {
+                            <li class="mb-3">
+                                <strong>@comment.Username</strong> on
+                                <a href="#" class="text-decoration-none">@Model.Header</a>
+                                <small class="d-block text-muted">@comment.Date</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No comments yet.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+
+
+

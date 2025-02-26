@@ -21,15 +21,14 @@ namespace EasyTripProject.Models
         public DbSet<FreeTravelGuides>? FreeTravelGuides { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    modelBuilder.Entity<Comments>()
-        .HasOne(c => c.FreeTravelGuides) // Comments'in bir FreeTravelGuides'ı var
-        .WithMany(f => f.Commentss) // FreeTravelGuides'ın birden çok Comments'i var
-        .HasForeignKey(c => c.FreeTravelGuidesId); // ForeignKey tanımı
+        {
+            modelBuilder.Entity<Comments>()
+                .HasOne(c => c.FreeTravelGuides)
+                .WithMany(f => f.Comments)
+                .HasForeignKey(c => c.FreeTravelGuidesId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-    base.OnModelCreating(modelBuilder);
-}
-
-       
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
