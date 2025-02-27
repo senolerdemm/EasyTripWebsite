@@ -1,0 +1,46 @@
+@model List<EasyTripProject.Models.FreeTravelGuides>
+
+<div class="travel-boxes">
+    @foreach (var item in Model)
+    {
+        <div class="box-container">
+            <div class="travel-box">
+                <img src="@item.ImageURL" alt="@item.Header" />
+                <h4>@item.Header</h4>
+                <p>
+                    @{
+                        var words = item.Description?.Split(' ');
+                        var shortDescription = words != null && words.Length > 20 
+                            ? string.Join(" ", words.Take(20)) + "..." 
+                            : item.Description;
+                    }
+                    @shortDescription
+                </p>
+                <a href="/FreeTravelGuide/Details/@item.Id" class="read">Read More</a>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .travel-box {
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .travel-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .travel-box h4 {
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+
+    .travel-box p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+</style>

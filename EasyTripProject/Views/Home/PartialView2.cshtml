@@ -1,0 +1,35 @@
+@model List<EasyTripProject.Models.FreeTravelGuides>
+
+<link rel="stylesheet" href="~/web/css/popular-places.css" />
+
+<div class="popular-section">
+    <h2 class="section-title">Most Popular Places</h2>
+    <div class="popular-places">
+        @foreach (var item in Model)
+        {
+            <div class="popular-box">
+                <div class="popular-image">
+                    <img src="@item.ImageURL" alt="@item.Header" />
+                </div>
+                <div class="popular-content">
+                    <h4>@item.Header</h4>
+                    <p>
+                        @{
+                            var words = item.Description?.Split(' ');
+                            var shortDescription = words != null && words.Length > 15 
+                                ? string.Join(" ", words.Take(15)) + "..." 
+                                : item.Description;
+                        }
+                        @shortDescription
+                    </p>
+                    <div class="popular-footer">
+                        <span class="comments-count">
+                            <i class="fas fa-comments"></i> @(item.Comments?.Count ?? 0) Comments
+                        </span>
+                        <a href="/FreeTravelGuide/Details/@item.Id" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

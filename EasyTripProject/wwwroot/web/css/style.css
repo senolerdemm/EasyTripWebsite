@@ -212,8 +212,9 @@ body {
   background: url(../images/head_bot.gif);
 }
 .wrap {
-  width: 970px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .logo {
   margin: 20px 0;
@@ -333,6 +334,9 @@ body {
 }
 .con-text {
   border-bottom: 2px ridge #fff;
+  float: right;
+  width: 250px;
+  margin-left: 20px;
 }
 .grid1-img {
   float: left;
@@ -666,36 +670,40 @@ span.doller {
   -moz-box-shadow: 0 0 5px #aaa;
   -o-box-shadow: 0 0 5px #aaa;
   padding: 1%;
+  width: 100%;
+  height: 350px; /* Reduced height */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: 40px;
 }
+
 .rslides {
   position: relative;
   list-style: none;
   overflow: hidden;
   width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
 }
+
 .rslides li {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   position: absolute;
-  display: none;
   width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
 }
-.rslides li:first-child {
-  position: relative;
-  display: block;
-  float: left;
-}
-.rslides img {
-  display: block;
-  height: auto;
-  float: left;
+
+.slider-image {
   width: 100%;
-  border: 0;
+  height: 100%;
+  object-fit: cover; /* This ensures image covers the area without distortion */
+  display: block;
 }
+
 .callbacks_nav {
   position: absolute;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -715,6 +723,15 @@ span.doller {
   background-position: right top;
   right: 0;
 }
+
+/* Adjust grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
 /*-- responsive design --*/
 @media (max-width: 991px) {
   .wrap {
@@ -793,6 +810,9 @@ span.doller {
     width: 100%;
     margin-top: 1em;
     padding-bottom: 2em;
+  }
+  .slider {
+    height: 300px;
   }
 }
 @media (max-width: 768px) {
@@ -906,6 +926,12 @@ span.doller {
     width: 38%;
     margin: 0px 16px 20px 0;
   }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* veya contain */
+  }
+
   .padding1 {
     width: 58%;
   }
@@ -980,6 +1006,9 @@ span.doller {
   }
   .contact {
     padding-bottom: 2em;
+  }
+  .slider {
+    height: 200px;
   }
 }
 @media (max-width: 414px) {
@@ -1126,4 +1155,10 @@ span.doller {
   font-size: 24px;
   color: #5d1029;
   margin: 10px 0;
+}
+
+.header_bottom_right_images {
+  width: 100%;
+  float: left;
+  margin-right: 20px;
 }

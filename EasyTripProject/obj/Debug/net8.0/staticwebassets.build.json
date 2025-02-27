@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bUHza7UMb/tnMNhWf1rmBdS++kRSKecWaQr0+FRTQSA=",
+  "Hash": "N18TXZaj8SqrPJgE+cV7Mpdy7jJERu5tgCh6zn3tbbc=",
   "Source": "EasyTripProject",
   "BasePath": "_content/EasyTripProject",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/web/contact.html"
+    },
+    {
+      "Identity": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web/css/popular-places.css",
+      "SourceId": "EasyTripProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/",
+      "BasePath": "_content/EasyTripProject",
+      "RelativePath": "web/css/popular-places.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/web/css/popular-places.css"
     },
     {
       "Identity": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web/css/slider.css",

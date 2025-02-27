@@ -253,6 +253,10 @@
       "PackagePath": "staticwebassets/web/contact.html"
     },
     {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web/css/popular-places.css",
+      "PackagePath": "staticwebassets/web/css/popular-places.css"
+    },
+    {
       "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web/css/slider.css",
       "PackagePath": "staticwebassets/web/css/slider.css"
     },
