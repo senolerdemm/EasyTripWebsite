@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/EasyTripProject.bundle.scp.css"
     },
     {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/css/login.css",
+      "PackagePath": "staticwebassets/css/login.css"
+    },
+    {
       "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
     },
@@ -471,6 +475,30 @@
     {
       "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/web2/w3layouts-License.txt",
       "PackagePath": "staticwebassets/web2/w3layouts-License.txt"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/css/style.css",
+      "PackagePath": "staticwebassets/weblogin Tema/css/style.css"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/fonts/Asap-Regular.ttf",
+      "PackagePath": "staticwebassets/weblogin Tema/fonts/Asap-Regular.ttf"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/fonts/Audiowide-Regular.ttf",
+      "PackagePath": "staticwebassets/weblogin Tema/fonts/Audiowide-Regular.ttf"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/images/b4.jpg",
+      "PackagePath": "staticwebassets/weblogin Tema/images/b4.jpg"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/index.html",
+      "PackagePath": "staticwebassets/weblogin Tema/index.html"
+    },
+    {
+      "Id": "/Users/senolerdem/EasyTrip/EasyTripProject/wwwroot/weblogin Tema/w3layouts-License.txt",
+      "PackagePath": "staticwebassets/weblogin Tema/w3layouts-License.txt"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.EasyTripProject.Microsoft.AspNetCore.StaticWebAssets.props",

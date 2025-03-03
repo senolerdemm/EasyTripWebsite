@@ -13,24 +13,17 @@ namespace EasyTripProject.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string? Username { get; set; }
+        public string Username { get; set; }
 
         [Required]
-        [StringLength(500)]
-        public string? Comment { get; set; }
+        public string Comment { get; set; }
 
-        [Required]
-        [EmailAddress]
-        [StringLength(100)]
-        public string? Mail { get; set; }
-
-        public string? Date { get; set; } 
        
+        public string Date { get; set; } = DateTime.Now.ToString("dd/MM/yyyy");
+
         [Required]
         public int FreeTravelGuidesId { get; set; }
 
-        [ForeignKey("FreeTravelGuidesId")]
         public virtual FreeTravelGuides? FreeTravelGuides { get; set; }
     }
 }

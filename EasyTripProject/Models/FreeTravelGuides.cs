@@ -16,7 +16,7 @@ namespace EasyTripProject.Models
         public int Id { get; set; }
         public string? Header { get; set; }
         public string? Description { get; set; }
-        public DateTime? Date { get; set; }
+        public DateTime? Date { get; set; } = DateTime.UtcNow;
         public string? ImageURL { get; set; }
        
         // Changed to non-nullable collection

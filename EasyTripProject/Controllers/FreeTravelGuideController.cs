@@ -73,25 +73,31 @@ namespace EasyTripProject.Controllers
 
         [HttpPost]
         [Route("AddComment")]
-        public IActionResult AddComment([Bind("Username,Mail,Comment,FreeTravelGuidesId")] Comments comments)
+        public IActionResult AddComment([Bind("Username,Comment,FreeTravelGuidesId")] Comments comments)
         {
             try
             {
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-                    comments.Date = DateTime.Now.ToString();
-                    _context.Comments?.Add(comments);
-                    _context.SaveChanges();
+                    _logger.LogWarning("ModelState is invalid: " + string.Join("; ", ModelState.Values
+                        .SelectMany(v => v.Errors)
+                        .Select(e => e.ErrorMessage)));
                     return RedirectToAction(nameof(Details), new { id = comments.FreeTravelGuidesId });
                 }
+
+                comments.Date = DateTime.Now.ToString("dd/MM/yyyy");
+                _context.Comments?.Add(comments);
+                _context.SaveChanges();
+                
+                TempData["Success"] = "Comment added successfully!";
+                return RedirectToAction(nameof(Details), new { id = comments.FreeTravelGuidesId });
             }
             catch (Exception ex)
             {
                 _logger.LogError($"Error adding comment: {ex.Message}");
-                ModelState.AddModelError("", "Error saving comment");
+                TempData["Error"] = "Error saving comment. Please try again.";
+                return RedirectToAction(nameof(Details), new { id = comments.FreeTravelGuidesId });
             }
-            
-            return RedirectToAction(nameof(Index));
         }
     }
 }

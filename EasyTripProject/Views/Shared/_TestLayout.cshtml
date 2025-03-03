@@ -69,6 +69,10 @@
       @RenderBody()
     </div>
 
+    <form asp-controller="Login" asp-action="Login" method="post">
+        <!-- ... existing form content ... -->
+    </form>
+
     @* Render "Scripts" section eğer sayfada tanımlıysa *@
     @RenderSection("Scripts", required: false)
 

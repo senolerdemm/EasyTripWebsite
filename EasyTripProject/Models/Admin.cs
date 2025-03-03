@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace EasyTripProject.Models
 {
-    public class Admin
-    { 
-        [Key]
-        public int Id { get; set; } 
-        public string ?Username { get; set; }
-        public string ?Password { get; set; }
+    public class Admin : IdentityUser
+    {
+        [Required]
+        public string? Name { get; set; }
+        [Required]
+        public string? Password { get; set; }
     }
 }

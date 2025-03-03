@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #4e73df;
+            padding-top: 20px;
+        }
+
+        .sidebar-brand {
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 15px;
+        }
+
+        .sidebar-item {
+            padding: 15px;
+            color: rgba(255,255,255,0.8);
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .sidebar-item:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .topbar {
+            background-color: white;
+            box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            Admin Panel
+        </div>
+        <a href="@Url.Action("Index", "Admin")" class="sidebar-item">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="@Url.Action("NewBlog", "Admin")" class="sidebar-item">
+            <i class="fas fa-fw fa-plus-circle"></i>
+            <span>New Blog</span>
+        </a>
+        <a href="@Url.Action("Comments", "Admin")" class="sidebar-item">
+            <i class="fas fa-comments"></i>
+            <span>Comments</span>
+        </a>
+    </div>
+
+    <div class="content">
+        <div class="topbar">
+            <h1 class="h3 mb-0 text-gray-800">@ViewData["Title"]</h1>
+        </div>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["Success"]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        @RenderBody()
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
